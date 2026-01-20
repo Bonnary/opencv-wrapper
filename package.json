@@ -1,0 +1,48 @@
+{
+  "name": "opencv-wrapper",
+  "version": "1.0.0",
+  "description": "Type-safe TypeScript wrapper for opencv.js WebAssembly",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "opencv.js"
+  ],
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "postinstall": "node -e \"console.log('\\n ⚠  opencv.js (10MB) needs to be available in your project.\\nDownload from: https://docs.opencv.org/4.13.0/opencv.js')\""
+  },
+  "keywords": [
+    "opencv",
+    "opencv.js",
+    "computer-vision",
+    "image-processing",
+    "webassembly",
+    "typescript",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "canvas": "^3.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/node": "^25.0.9"
+  }
+}
